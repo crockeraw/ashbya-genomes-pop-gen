@@ -1,5 +1,5 @@
 # BIOS 611 Project
-## Alex Crocker 2021
+## Pop Gen Analysis (probably) --- Alex Crocker 2021
 
 Probably going to do analysis on some genomic data that I already have. But may change my mind agian... 
 
