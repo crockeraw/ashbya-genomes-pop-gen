@@ -30,7 +30,7 @@ ui <- fluidPage(
 )
 
 # Define server logic required to draw a histogram
-server <- function(input, output, session) {
+server <- function(input, output, session){
     
     # By default shiny does not allow files >5MB. 
     options(shiny.maxRequestSize=30*1024^2)
@@ -50,4 +50,6 @@ server <- function(input, output, session) {
 
 
 # Run the application 
-shinyApp(ui = ui, server = server)
+shinyApp(ui=ui,server=server,
+         options=list(port=8080, host="0.0.0.0"));
+EOF
