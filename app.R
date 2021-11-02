@@ -50,6 +50,10 @@ server <- function(input, output, session){
 
 
 # Run the application 
+<<<<<<< HEAD
+shinyApp(ui = 8722, server = "0.0.0.0")
+=======
 shinyApp(ui=ui,server=server,
          options=list(port=8080, host="0.0.0.0"));
 EOF
+>>>>>>> a797a99b7a5f00f4b2d37dd6515505a197425dbf
