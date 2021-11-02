@@ -57,4 +57,4 @@ server <- function(input, output, session) {
 
 
 # Run the application 
-shinyApp(ui = ui, server = server)
+shinyApp(ui = 8722, server = "0.0.0.0")
