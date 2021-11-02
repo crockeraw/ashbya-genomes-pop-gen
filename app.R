@@ -20,8 +20,7 @@ ui <- fluidPage(
         sidebarPanel(
             fileInput("vcf", "Provide a variant call (vcf) File", accept = ".vcf"),
             fileInput("fasta", "And a genome (fasta) File", accept = ".fa"),
-            fileInput("gff", "And an annotation (gff) File", accept = ".gff3"),
-            actionButton("make_plot", "Plot")
+            fileInput("gff", "And an annotation (gff) File", accept = ".gff3")
         ),
     mainPanel(
         plotOutput("contents")
@@ -31,30 +30,30 @@ ui <- fluidPage(
 )
 
 # Define server logic required to draw a histogram
-server <- function(input, output, session) {
+server <- function(input, output, session){
     
     # By default shiny does not allow files >5MB. 
     options(shiny.maxRequestSize=30*1024^2)
-    data_input <- reactive({
-        req(input$csv_input)
-        fread(input$csv_input$datapath)
-    })
     
-    
-    vcf <- reactive({req(input$vcf)
-        read.vcfR(input$vcf)})
-    #gen <- vcfR2genlight(vcf)
-    dna <- reactive({req(input$dna)
-        ape::read.dna(input$fasta, format = "fasta")})
-    gff <- reactive({req(input$gff)
-        read.table(input$gff, sep="\t", quote="")})
-    plot1 <- observeEvent(input$make_plot,{
-        chrom <- create.chromR(name="Supercontig", vcf=vcf(), seq=dna(), ann=gff(), verbose=TRUE)
-        print("debugging")
+    output$contents <- renderPlot({
+        req(input$gff)
+        vcf <- read.vcfR(input$vcf$datapath)
+        dna <- ape::read.dna(input$fasta$datapath, format = "fasta")
+        gff <- read.table(input$gff$datapath, sep="\t", quote="")
+        #gen <- vcfR2genlight(vcf)
+        chrom <- create.chromR(name="Supercontig", vcf=vcf, seq=dna, ann=gff, verbose=TRUE)
+        chrom <- masker(chrom, min_QUAL = 100, min_DP = 1000, min_MQ = 50)
+        # AT this point snp densities have not been calculated.
+        chrom <- proc.chromR(chrom, verbose=TRUE, win.size = 100)
         plot(chrom)})
-    output$contents <- renderPlot(plot1)
 }
 
 
 # Run the application 
+<<<<<<< HEAD
 shinyApp(ui = 8722, server = "0.0.0.0")
+=======
+shinyApp(ui=ui,server=server,
+         options=list(port=8080, host="0.0.0.0"));
+EOF
+>>>>>>> a797a99b7a5f00f4b2d37dd6515505a197425dbf
