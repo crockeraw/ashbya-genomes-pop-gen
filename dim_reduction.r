@@ -115,3 +115,6 @@ p8 <- p8 + scale_fill_manual(values=c(paste(my_pal, "66", sep = "")))
 p8
 png("images/geographic_byPCA.png")
 dev.off()
+
+data_csv = as.data.frame(gl)
+write.csv(data_csv, "data_table.csv")
