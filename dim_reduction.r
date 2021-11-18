@@ -75,7 +75,8 @@ png("images/DAPC_5means.png")
 dev.off()
 
 # Label with metadata
-meta <- as.data.frame(read.table("proj/source_data/metadata.csv", sep = ",", header = TRUE))
+meta <- as.data.frame(read.table("source_data/metadata.csv", sep = ",", header = TRUE))
+rownames(meta)<-meta$REF
 merged <- merge(pc_points,meta[,c("LAT", "LON", "plant", "bug.species")],by=0,x.all=TRUE)
 merged[merged==""] <- NA
 
