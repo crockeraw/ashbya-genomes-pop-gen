@@ -1,4 +1,4 @@
-.PHONY: clean
+.PHONY: clean images
 SHELL: /bin/bash
 
 clean:
@@ -8,9 +8,9 @@ clean:
 images: images/pre-filteringQC.png images/pca.png
 
 images/pre-filteringQC.png\
- pre-filteringQC_hist.png\
- post-filteringQC.png\
- post-filteringQC_hist.png: seq_sum_stats.r mito.vcf mito_vars.vcf
+ images/pre-filteringQC_hist.png\
+ images/post-filteringQC.png\
+ images/post-filteringQC_hist.png: seq_sum_stats.r source_data/mito.vcf source_data/mito_vars.vcf
 	Rscript seq_sum_stats.r
 
 images/pca.png\
@@ -21,5 +21,5 @@ images/pca.png\
  images/DAPC_byPlant.png\
  images/DAPC_byBug.png\
  images/geographic_byDAPC.png\
- images/geographic_byPCA.png: dim_reduction.r mito_vars.vcf
+ images/geographic_byPCA.png: dim_reduction.r source_data/mito_vars.vcf
 	Rscript dim_reduction.r
