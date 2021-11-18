@@ -1,11 +1,7 @@
 library("vcfR")
 
-vcf <- read.vcfR("source_data/mito_vars.vcf")
 
-# need to pipe std-out to file. numer non-biallelic variants removed.
-
-# load reference genome and annotations for sick plots. 
-
+vcf <- read.vcfR("source_data/mito.vcf")
 dna_file <- 'source_data/mito.fa'
 gff_file <- 'source_data/mito.gff3'
 dna <- ape::read.dna(dna_file, format = "fasta")
