@@ -4,7 +4,8 @@ SHELL: /bin/bash
 clean:
 	rm -f derived_data/*
 	rm -f images/*
-	mkdir images
+
+images: images/pre-filteringQC.png images/pca.png
 
 images/pre-filteringQC.png\
  pre-filteringQC_hist.png\
