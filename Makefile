@@ -23,3 +23,6 @@ images/pca.png\
  images/geographic_byDAPC.png\
  images/geographic_byPCA.png: dim_reduction.r source_data/mito_vars.vcf
 	Rscript dim_reduction.r
+
+report.html: report.md images/pre-filteringQC.png images/pca.png
+	pandoc report.md -t html -o report.html
