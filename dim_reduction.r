@@ -41,7 +41,8 @@ dev.off()
 clust <- find.clusters(gl, glPca=pca1, n.pca= 10, n.clust=10)
 pal10 <- RColorBrewer::brewer.pal(n=10, name = "Paired")
 p2 <- ggplot(pc_points, aes(x = PC1, y = PC2, color = clust$grp, fill = clust$grp))
-p2 <- p2 + geom_point(size = 4, shape = 21)
+p2 <- p2 + geom_point(size = 4, shape = 21) 
+p2 <- p2 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
 p2 <- p2 + theme_bw()
 p2 <- p2 + scale_color_manual(values=c(pal10))
 p2 <- p2 + scale_fill_manual(values=c(paste(pal10, "66", sep = "")))
@@ -53,12 +54,14 @@ clust <- find.clusters(gl, glPca=pca1, n.pca= 10, n.clust=5)
 plot(pca1$scores, col=factor(clust$grp))
 p3 <- ggplot(pc_points, aes(x = PC1, y = PC2, color = clust$grp, fill = clust$grp))
 p3 <- p3 + geom_point(size = 4, shape = 21)
+p3 <- p3 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
 p3 <- p3 + theme_bw()
 p3 <- p3 + scale_color_manual(values=c(my_pal))
-p3 <- p3 + scale_fill_manual(values=c(paste(pal10, "66", sep = "")))
+p3 <- p3 + scale_fill_manual(values=c(paste(my_pal, "66", sep = "")))
 png("images/pca_5means.png")
 p3
 dev.off()
+
 # Discriminant analysis of principal components
 dapc <- dapc(gl, glPca = pca1, pop=clust$grp, n.pca=10, n.da=10)
 dapc_df <- as.data.frame(dapc$ind.coord)
@@ -67,11 +70,12 @@ dapc_df$Group <- dapc$grp
 my_pal <- RColorBrewer::brewer.pal(n=8, name = "Dark2")
 p4 <- ggplot(dapc_df, aes(x = LD1, y = LD2, color = Group, fill = Group))
 p4 <- p4 + geom_point(size = 4, shape = 21)
+p4 <- p4 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
 p4 <- p4 + theme_bw()
 p4 <- p4 + scale_color_manual(values=c(my_pal))
 p4 <- p4 + scale_fill_manual(values=c(paste(my_pal, "66", sep = "")))
-p4
 png("images/DAPC_5means.png")
+p4
 dev.off()
 
 # Label with metadata
@@ -82,40 +86,44 @@ merged[merged==""] <- NA
 
 p5 <- ggplot(dapc_df, aes(x = LD1, y = LD2, color = merged$plant, fill = merged$plant))
 p5 <- p5 + geom_point(size = 4, shape = 21)
+p5 <- p5 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
 p5 <- p5 + theme_bw()
 p5 <- p5 + scale_color_manual(values=c(my_pal),na.value="grey") 
 p5 <- p5 + scale_fill_manual(values=c(paste(my_pal, "66", sep = "")))
+png("images/DAPC_byPlant.png")
 p5
-png("images/dapc_byPlant.png")
 dev.off()
 
 merged$bug.species <- tolower(merged$bug.species)
 p6 <- ggplot(dapc_df, aes(x = LD1, y = LD2, color = merged$bug.species, fill = merged$bug.species))
 p6 <- p6 + geom_point(size = 4, shape = 21)
+p6 <- p6 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
 p6 <- p6 + theme_bw()
 p6 <- p6 + scale_color_manual(values=c(my_pal),na.value="grey") 
 p6 <- p6 + scale_fill_manual(values=c(paste(my_pal, "66", sep = "")))
+png("images/DAPC_byBug.png")
 p6
-png("images/dapc_byBug.png")
 dev.off()
 
 p7 <- ggplot(merged, aes(x = LON, y = LAT, color = dapc_df$GROUP, fill = dapc_df$Group))
 p7 <- p7 + geom_jitter(size = 4, shape = 21, width = 1, height = 3)
+p7 <- p7 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
 p7 <- p7 + theme_bw()
 p7 <- p7 + scale_color_manual(values=c(my_pal),na.value="grey") 
 p7 <- p7 + scale_fill_manual(values=c(paste(my_pal, "66", sep = "")))
-p7
 png("images/geographic_byDAPC.png")
+p7
 dev.off()
 
 p8 <- ggplot(merged, aes(x = LON, y = LAT, color = clust$grp, fill = clust$grp))
 p8 <- p8 + geom_jitter(size = 4, shape = 21, width = 1, height = 3)
+p8 <- p8 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
 p8 <- p8 + theme_bw()
 p8 <- p8 + scale_color_manual(values=c(my_pal),na.value="grey") 
 p8 <- p8 + scale_fill_manual(values=c(paste(my_pal, "66", sep = "")))
-p8
 png("images/geographic_byPCA.png")
+p8
 dev.off()
 
 data_csv = as.data.frame(gl)
-write.csv(data_csv, "data_table.csv")
+write.csv(data_csv, "derived_data/variants_isolate_by_gene.csv")
