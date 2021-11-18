@@ -1,6 +1,6 @@
 library("vcfR")
 
-vcf <- read.vcfR("source_data/mito_all.vcf")
+vcf <- read.vcfR("source_data/mito_vars.vcf")
 
 # need to pipe std-out to file. numer non-biallelic variants removed.
 

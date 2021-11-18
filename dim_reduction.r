@@ -5,7 +5,7 @@ library(ggplot2)
 library(reshape2)
 
 # Load and clean file
-vcf <- read.vcfR("source_data/mito_filtered.vcf")
+vcf <- read.vcfR("source_data/mito_vars.vcf")
 # Replace with only the REF ID that would be used in the metadata sheet:
 res <- str_match(colnames(vcf@gt)[-1], "bams/\\s*(.*?)\\s*ASGY")[,2]
 colnames(vcf@gt)[-1] <- res
@@ -38,7 +38,7 @@ p1
 dev.off()
 
 # PCA with labelled clusters 
-clust <- find.clusters(gen, glPca=pca1, n.pca= 10, n.clust=10)
+clust <- find.clusters(gl, glPca=pca1, n.pca= 10, n.clust=10)
 pal10 <- RColorBrewer::brewer.pal(n=10, name = "Paired")
 p2 <- ggplot(pc_points, aes(x = PC1, y = PC2, color = clust$grp, fill = clust$grp))
 p2 <- p2 + geom_point(size = 4, shape = 21)
@@ -49,7 +49,7 @@ png("images/pca_10means.png")
 p2
 dev.off()
 
-clust <- find.clusters(gen, glPca=pca1, n.pca= 10, n.clust=5)
+clust <- find.clusters(gl, glPca=pca1, n.pca= 10, n.clust=5)
 plot(pca1$scores, col=factor(clust$grp))
 p3 <- ggplot(pc_points, aes(x = PC1, y = PC2, color = clust$grp, fill = clust$grp))
 p3 <- p3 + geom_point(size = 4, shape = 21)
