@@ -30,9 +30,11 @@ perc_var <- as.data.frame(percents)
 perc_var$PC <- colnames(pca1$scores)
 perc_var$PC <- factor(perc_var$PC, levels = perc_var$PC)
 barplot(perc_var, main="Percent Variance explained by PCs", col=heat.colors(length(perc_var)))
-p<-ggplot(perc_var, aes(x=PC, y=percents)) +
+p0p5<-ggplot(perc_var, aes(x=PC, y=percents)) +
   geom_col() + theme_bw() + labs(y = "% Variance", x = NULL)
-p
+png("images/perc_var.png")
+p0p5
+dev.off()
 
 # Check multiple K for clustering multiple times
 maxK <- 23
