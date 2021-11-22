@@ -19,9 +19,20 @@ gl <- vcfR2genlight(vcf)
 pca1 <- glPca(gl, nf=10)
 pc_points <- as.data.frame(pca1$scores)
 p0 <- ggplot(pc_points, aes(x = PC1, y = PC2)) + theme_bw() + geom_point(size = 4, shape = 21, alpha=.66, fill='grey', colour="dark grey")
+p0 <- p0 + theme_bw()
 png("images/pca.png")
 p0
 dev.off()
+data_csv = as.data.frame(gl)
+for (i in data_csv){v = v+(var(i))}
+percents <- 100*(pca1$eig/v)[1:10]
+perc_var <- as.data.frame(percents)
+perc_var$PC <- colnames(pca1$scores)
+perc_var$PC <- factor(perc_var$PC, levels = perc_var$PC)
+barplot(perc_var, main="Percent Variance explained by PCs", col=heat.colors(length(perc_var)))
+p<-ggplot(perc_var, aes(x=PC, y=percents)) +
+  geom_col() + theme_bw() + labs(y = "% Variance", x = NULL)
+p
 
 # Check multiple K for clustering multiple times
 maxK <- 23
@@ -127,5 +138,4 @@ png("images/geographic_byPCA.png")
 p8
 dev.off()
 
-data_csv = as.data.frame(gl)
 write.csv(data_csv, "derived_data/variants_isolate_by_gene.csv")
