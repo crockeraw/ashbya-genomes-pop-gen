@@ -4,7 +4,10 @@ library("tidyverse")
 library(ggplot2)
 library(reshape2)
 
+my_pal <- RColorBrewer::brewer.pal(n=8, name = "Dark2")
+
 dir.create("images",showWarnings = FALSE)
+dir.create("derived_data",showWarnings = FALSE)
 
 # Load and clean file
 vcf <- read.vcfR("source_data/mito_vars.vcf")
@@ -24,12 +27,12 @@ png("images/pca.png")
 p0
 dev.off()
 data_csv = as.data.frame(gl)
+v=0
 for (i in data_csv){v = v+(var(i))}
 percents <- 100*(pca1$eig/v)[1:10]
 perc_var <- as.data.frame(percents)
 perc_var$PC <- colnames(pca1$scores)
 perc_var$PC <- factor(perc_var$PC, levels = perc_var$PC)
-barplot(perc_var, main="Percent Variance explained by PCs", col=heat.colors(length(perc_var)))
 p0p5<-ggplot(perc_var, aes(x=PC, y=percents)) +
   geom_col() + theme_bw() + labs(y = "% Variance", x = NULL)
 png("images/perc_var.png")
@@ -82,7 +85,6 @@ dapc <- dapc(gl, glPca = pca1, pop=clust$grp, n.pca=10, n.da=10)
 dapc_df <- as.data.frame(dapc$ind.coord)
 dapc_df$Group <- dapc$grp
 
-my_pal <- RColorBrewer::brewer.pal(n=8, name = "Dark2")
 p4 <- ggplot(dapc_df, aes(x = LD1, y = LD2, color = Group, fill = Group))
 p4 <- p4 + geom_point(size = 4, shape = 21)
 p4 <- p4 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
@@ -141,3 +143,4 @@ p8
 dev.off()
 
 write.csv(data_csv, "derived_data/variants_isolate_by_gene.csv")
+
