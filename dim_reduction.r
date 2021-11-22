@@ -4,6 +4,8 @@ library("tidyverse")
 library(ggplot2)
 library(reshape2)
 
+dir.create("images",showWarnings = FALSE)
+
 # Load and clean file
 vcf <- read.vcfR("source_data/mito_vars.vcf")
 # Replace with only the REF ID that would be used in the metadata sheet:

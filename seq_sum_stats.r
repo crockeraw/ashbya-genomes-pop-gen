@@ -1,5 +1,6 @@
 library("vcfR")
 
+dir.create("images",showWarnings = FALSE)
 
 vcf <- read.vcfR("source_data/mito.vcf")
 dna_file <- 'source_data/mito.fa'
