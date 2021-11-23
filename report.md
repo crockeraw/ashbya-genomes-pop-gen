@@ -94,9 +94,9 @@ Ashbya is associated with bugs that grow on plants (most commonly milkweed). By 
 
 ### Clusters in Geographical space <a name="geo"></a>
 
-Another piece of information we have about these samples is the latitude and longitude at which they were collected. By plotting samples in coordinate space and coloring them by the clusters to which they were assigned, we hope to learn about geographic population structure, or about whether it exists. Since many samples were taken in the same location, I have added some random "jitter" to the points in the plot.
+Another piece of information we have about these samples is the latitude and longitude at which they were collected. By plotting samples in coordinate space and coloring them by the clusters to which they were assigned, we hope to learn about geographic population structure, or about whether it exists. Since many samples were taken in the same location, I have added some random "jitter" to the points in the plot and use both DAPC (left) and PCA (right).
 
 <p float="left">
-<img src="images/geographic_byDAPC.png" width="500"/>
-<img src="images/geographic_byPCA.png" width="500"/>
+<img src="images/geographic_byDAPC.png" width="500", height="300"/>
+<img src="images/geographic_byPCA.png" width="500", height="300/>
 </p>
