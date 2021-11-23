@@ -127,7 +127,9 @@ p7 <- p7 + geom_jitter(size = 4, shape = 21, width = 1, height = 3)
 p7 <- p7 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
 p7 <- p7 + theme_bw()
 p7 <- p7 + scale_color_manual(values=c(my_pal),na.value="grey") 
-p7 <- p7 + scale_fill_manual(values=c(paste(my_pal, "66", sep = "")))
+p7 <- p7 + scale_fill_manual(values=c(paste(my_pal, "66", sep = ""))) +
+  geom_polygon( data=MainStates, aes(x=long, y=lat, group=group),
+                color="black", fill=NA)
 png("images/geographic_byDAPC.png")
 p7
 dev.off()
@@ -137,10 +139,20 @@ p8 <- p8 + geom_jitter(size = 4, shape = 21, width = 1, height = 3)
 p8 <- p8 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
 p8 <- p8 + theme_bw()
 p8 <- p8 + scale_color_manual(values=c(my_pal),na.value="grey") 
-p8 <- p8 + scale_fill_manual(values=c(paste(my_pal, "66", sep = "")))
+p8 <- p8 + scale_fill_manual(values=c(paste(my_pal, "66", sep = ""))) +
+  geom_polygon( data=MainStates, aes(x=long, y=lat, group=group),
+                color="black", fill=NA)
 png("images/geographic_byPCA.png")
 p8
 dev.off()
+
+library(maps)
+MainStates <- map_data("state")
+ggplot() + 
+  geom_polygon( data=MainStates, aes(x=long, y=lat, group=group),
+                color="black", fill="lightblue" )
+
+
 
 write.csv(data_csv, "derived_data/variants_isolate_by_gene.csv")
 
