@@ -122,6 +122,9 @@ png("images/DAPC_byBug.png")
 p6
 dev.off()
 
+library(maps)
+MainStates <- map_data("state")
+
 p7 <- ggplot(merged, aes(x = LON, y = LAT, color = dapc_df$GROUP, fill = dapc_df$Group))
 p7 <- p7 + geom_jitter(size = 4, shape = 21, width = 1, height = 3)
 p7 <- p7 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
@@ -146,8 +149,6 @@ png("images/geographic_byPCA.png")
 p8
 dev.off()
 
-library(maps)
-MainStates <- map_data("state")
 ggplot() + 
   geom_polygon( data=MainStates, aes(x=long, y=lat, group=group),
                 color="black", fill="lightblue" )
