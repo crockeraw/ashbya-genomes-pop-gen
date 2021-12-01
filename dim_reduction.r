@@ -69,7 +69,6 @@ p2
 dev.off()
 
 clust <- find.clusters(gl, glPca=pca1, n.pca= 10, n.clust=5)
-plot(pca1$scores, col=factor(clust$grp))
 p3 <- ggplot(pc_points, aes(x = PC1, y = PC2, color = clust$grp, fill = clust$grp))
 p3 <- p3 + geom_point(size = 4, shape = 21)
 p3 <- p3 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
@@ -149,11 +148,14 @@ png("images/geographic_byPCA.png")
 p8
 dev.off()
 
-ggplot() + 
-  geom_polygon( data=MainStates, aes(x=long, y=lat, group=group),
-                color="black", fill="lightblue" )
-
-
+gl@pop <- clust$grp
+png("images/phylo_tree.png", width=800, height=600)
+plot.phylo(tree, cex = 0.8, font = 2, adj = 0, tip.color = my_pal[gl$pop])
+#legend(35,10,c("CA","OR","WA"),cols, border = FALSE, bty = "n")
+legend('topleft', legend = gl$pop, fill = cols, border = FALSE, bty = "n", cex = 2)
+axis(side = 1)
+title(xlab = "Genetic distance (proportion of loci that are different)")
+dev.off()
 
 write.csv(data_csv, "derived_data/variants_isolate_by_gene.csv")
 
