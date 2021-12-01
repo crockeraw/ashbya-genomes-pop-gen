@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+
 <style type="text/css">
 .main-container {
   max-width: 1800px;
@@ -10,7 +12,7 @@ output:
   html_document: default
   pdf_document: default
 ---
-# Report
+# BIOS616 Project Report: Ashbya mt genome analysis
 
 - [1. Project Overview](#Intro)
 - [2. Quality Analysis](#QA)
@@ -76,7 +78,7 @@ This is all pretty subjective, but it seems kind of useless to have that many cl
 
 ### Discriminant analysis of principal components <a name="DAPC"></a>
 
-<a href="https://bmcgenomdata.biomedcentral.com/articles/10.1186/1471-2156-11-94"">Jombart et al. 2010</a> introduced a method called Discriminant Analysis of Principal Components (DAPC), which relies on sequential Kmeans clustering to choose underlying models and predict genetic clustering.\
+<a href="https://bmcgenomdata.biomedcentral.com/articles/10.1186/1471-2156-11-94">Jombart et al. 2010</a> introduced a method called Discriminant Analysis of Principal Components (DAPC), which relies on sequential Kmeans clustering to choose underlying models and predict genetic clustering.\
 
 <img src="images/DAPC_5means.png" width="500"/>
 
@@ -94,9 +96,20 @@ Ashbya is associated with bugs that grow on plants (most commonly milkweed). By 
 
 ### Clusters in Geographical space <a name="geo"></a>
 
-Another piece of information we have about these samples is the latitude and longitude at which they were collected. By plotting samples in coordinate space and coloring them by the clusters to which they were assigned, we hope to learn about geographic population structure, or about whether it exists. Since many samples were taken in the same location, I have added some random "jitter" to the points in the plot and use both DAPC (left) and PCA (right).
+Another piece of information we have about these samples is the latitude and longitude at which they were collected. By plotting samples in coordinate space and coloring them by the clusters to which they were assigned, we hope to learn about geographic population structure, or about whether it exists. Since many samples were taken in the same location, I have added some random "jitter" to the points in the plot and use both DAPC (left) and PCA (right). \
 
 <p float="left">
-<img src="images/geographic_byDAPC.png" width="500", height="300"/>
-<img src="images/geographic_byPCA.png" width="500", height="300/>
+<img src="images/geographic_byDAPC.png" width="500" height="300"/>
+<img src="images/geographic_byPCA.png" width="500" height="300"/>
 </p>
+
+## Phylogenetics <a name='phylo'></a>
+
+Trees and linkage and stuff.
+
+### Trees
+
+Based on distance metric, colored with Kmeans groupings.\
+
+<img src="images/phylo_tree.png" width="800"/>
+
