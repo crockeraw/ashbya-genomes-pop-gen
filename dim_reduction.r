@@ -10,7 +10,7 @@ dir.create("images",showWarnings = FALSE)
 dir.create("derived_data",showWarnings = FALSE)
 
 # Load and clean file
-vcf <- read.vcfR("source_data/mito_vars.vcf")
+vcf <- read.vcfR("source_data/filtered_vars_biallelic_seen2x.vcf")
 # Replace with only the REF ID that would be used in the metadata sheet:
 res <- str_match(colnames(vcf@gt)[-1], "bams/\\s*(.*?)\\s*ASGY")[,2]
 colnames(vcf@gt)[-1] <- res
@@ -122,12 +122,17 @@ png("images/DAPC_byBug.png")
 p6
 dev.off()
 
+library(maps)
+MainStates <- map_data("state")
+
 p7 <- ggplot(merged, aes(x = LON, y = LAT, color = dapc_df$GROUP, fill = dapc_df$Group))
 p7 <- p7 + geom_jitter(size = 4, shape = 21, width = 1, height = 3)
 p7 <- p7 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
 p7 <- p7 + theme_bw()
 p7 <- p7 + scale_color_manual(values=c(my_pal),na.value="grey") 
-p7 <- p7 + scale_fill_manual(values=c(paste(my_pal, "66", sep = "")))
+p7 <- p7 + scale_fill_manual(values=c(paste(my_pal, "66", sep = ""))) +
+  geom_polygon( data=MainStates, aes(x=long, y=lat, group=group),
+                color="black", fill=NA)
 png("images/geographic_byDAPC.png")
 p7
 dev.off()
@@ -137,10 +142,38 @@ p8 <- p8 + geom_jitter(size = 4, shape = 21, width = 1, height = 3)
 p8 <- p8 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
 p8 <- p8 + theme_bw()
 p8 <- p8 + scale_color_manual(values=c(my_pal),na.value="grey") 
-p8 <- p8 + scale_fill_manual(values=c(paste(my_pal, "66", sep = "")))
+p8 <- p8 + scale_fill_manual(values=c(paste(my_pal, "66", sep = ""))) +
+  geom_polygon( data=MainStates, aes(x=long, y=lat, group=group),
+                color="black", fill=NA)
 png("images/geographic_byPCA.png")
 p8
 dev.off()
+
+library(ape)
+library(poppr)
+tree <- aboot(gl, tree = "upgma", distance = bitwise.dist, sample = 100, showtree = F, cutoff = 50, quiet = T)
+gl@pop <- clust$grp
+png("images/phylo_tree.png", width=800, height=600)
+plot.phylo(tree, cex = 0.8, font = 2, adj = 0, tip.color = my_pal[gl$pop])
+#legend(35,10,c("CA","OR","WA"),cols, border = FALSE, bty = "n")
+legend('topleft', legend = gl$pop, fill = cols, border = FALSE, bty = "n", cex = 2)
+axis(side = 1)
+title(xlab = "Genetic distance (proportion of loci that are different)")
+dev.off()
+
+sub3 <- popsub(gl, "3")
+
+ia <- samp.ia(sub3,n.snp = 1000L, reps = 100)
+hist(ia)
+
+not3 <- popsub(gl, c("1","2","4","5"))
+
+ia_not3 <- samp.ia(sub3,n.snp = 1000L, reps = 100)
+hist(ia_not3)
+
+sub1 <- popsub(gl, "1")
+ia1 <- samp.ia(sub3,n.snp = 1000, reps = 100)
+hist(ia1)
 
 write.csv(data_csv, "derived_data/variants_isolate_by_gene.csv")
 

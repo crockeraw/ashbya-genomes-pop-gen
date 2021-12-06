@@ -14,7 +14,7 @@ images: images/pre-filteringQC.png images/pca.png
 images/pre-filteringQC.png\
  images/pre-filteringQC_hist.png\
  images/post-filteringQC.png\
- images/post-filteringQC_hist.png: seq_sum_stats.r source_data/mito.vcf source_data/mito_vars.vcf
+ images/post-filteringQC_hist.png: seq_sum_stats.r source_data/filtered_vars_biallelic_seen2x_thin100.vcf
 	Rscript seq_sum_stats.r
 
 images/pca.png\
@@ -25,6 +25,6 @@ images/pca.png\
  images/DAPC_byPlant.png\
  images/DAPC_byBug.png\
  images/geographic_byDAPC.png\
- images/geographic_byPCA.png: dim_reduction.r source_data/mito_vars.vcf
+ images/geographic_byPCA.png: dim_reduction.r source_data/filtered_vars_biallelic_seen2x_thin100.vcf
 	Rscript dim_reduction.r
 
