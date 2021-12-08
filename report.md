@@ -28,7 +28,7 @@ output:
 - [5. Links](#links)
 
 ## Project Overview <a name="Intro"></a>
-Empty...
+48 Ashbya genomes, 46 after filtering possible duplicate samples.\
 
 ## Quality Analysis <a name="QA"></a>
 *Ashbya* genomes were sequenced with paired-end, short-read technology, and aligned to the *Ashbya* reference genome.

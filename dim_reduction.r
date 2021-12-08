@@ -98,11 +98,14 @@ dev.off()
 # Label with metadata
 meta <- as.data.frame(read.table("source_data/metadata.csv", sep = ",", header = TRUE))
 rownames(meta)<-meta$REF
-merged <- merge(pc_points,meta[,c("LAT", "LON", "plant", "bug.species")],by=0,x.all=TRUE)
+merged <- merge(pc_points[1:2],meta[,c("LAT", "LON", "plant", "bug.species")],by=0,x.all=TRUE)
+row.names(merged)<-merged$Row.names
+merged <- merge(dapc_df[c(1,2,5)],merged,by=0,x.all=TRUE)
 merged[merged==""] <- NA
+merged <- merged[-5]
 
 p5 <- ggplot(dapc_df, aes(x = LD1, y = LD2, color = merged$plant, fill = merged$plant))
-p5 <- p5 + geom_point(size = 4, shape = 21)
+p5 <- p5 + geom_jitter(size = 4, shape = 21, width=200,height=200)
 p5 <- p5 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
 p5 <- p5 + theme_bw()
 p5 <- p5 + scale_color_manual(values=c(my_pal),na.value="grey") 
@@ -113,7 +116,7 @@ dev.off()
 
 merged$bug.species <- tolower(merged$bug.species)
 p6 <- ggplot(dapc_df, aes(x = LD1, y = LD2, color = merged$bug.species, fill = merged$bug.species))
-p6 <- p6 + geom_point(size = 4, shape = 21)
+p6 <- p6 + geom_jitter(size = 4, shape = 21, width=200,height=200)
 p6 <- p6 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
 p6 <- p6 + theme_bw()
 p6 <- p6 + scale_color_manual(values=c(my_pal),na.value="grey") 
@@ -126,7 +129,7 @@ library(maps)
 MainStates <- map_data("state")
 
 p7 <- ggplot(merged, aes(x = LON, y = LAT, color = dapc_df$GROUP, fill = dapc_df$Group))
-p7 <- p7 + geom_jitter(size = 4, shape = 21, width = 1, height = 3)
+p7 <- p7 + geom_jitter(size = 4, shape = 21, width = .33, height = 1)
 p7 <- p7 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
 p7 <- p7 + theme_bw()
 p7 <- p7 + scale_color_manual(values=c(my_pal),na.value="grey") 
@@ -143,8 +146,8 @@ p8 <- p8 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(
 p8 <- p8 + theme_bw()
 p8 <- p8 + scale_color_manual(values=c(my_pal),na.value="grey") 
 p8 <- p8 + scale_fill_manual(values=c(paste(my_pal, "66", sep = ""))) +
-  geom_polygon( data=MainStates, aes(x=long, y=lat, group=group),
-                color="black", fill=NA)
+geom_polygon( data=MainStates, aes(x=long, y=lat, group=group),
+              color="black", fill=NA)
 png("images/geographic_byPCA.png")
 p8
 dev.off()
@@ -161,7 +164,7 @@ axis(side = 1)
 title(xlab = "Genetic distance (proportion of loci that are different)")
 dev.off()
 
-sub3 <- popsub(gl, "3")
+sub3 <- popsub(gl, "2")
 
 ia <- samp.ia(sub3,n.snp = 1000L, reps = 100)
 hist(ia)
@@ -175,5 +178,9 @@ sub1 <- popsub(gl, "1")
 ia1 <- samp.ia(sub3,n.snp = 1000, reps = 100)
 hist(ia1)
 
-write.csv(data_csv, "derived_data/variants_isolate_by_gene.csv")
+colnames(merged)[4] <- "Cluster"
+colnames(merged)[9] <- "Plant"
+colnames(merged)[10] <- "Insect"
 
+write.csv(data_csv, "derived_data/variants_isolate_by_gene.csv")
+write.csv(merged, "derived_data/shiny_data.csv")

@@ -7,5 +7,5 @@ docker run --rm \
  -e PASSWORD=${1:-foo}\
  -v $(pwd):/home/rstudio/\
  -d\
- -t core-genome > /tmp/docker-output
+ -t core-genome 
 echo login to Rstudio using the address localhost:8787 in a web browser. Your username is Rstudio, your password is ${1:-foo}.

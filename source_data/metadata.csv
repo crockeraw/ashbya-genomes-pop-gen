@@ -1,69 +1,69 @@
 REF,Let,Num,Description,LAT,LON,,number of Q,bug species,bug stage,plant,state,city,date,notes,
 A1,A,1,ATCC strain,,,,113,,,,Unknown,,,,
 A2,A,2,Ashbya- West Palm  beach FL- milkweed bug - Oleander 7/21/07,26.72,-80.05,,,milkweed bug,,oleander,FL,West Palm Beach,7/21/07,,
-A3,A,3,Ashbya- West Palm Beach Beach FL- milkweed bug - Oleander 7/21/07,26.72,-80.05,,113.00,milkweed bug,,oleander,FL,West Palm Beach,7/21/07,,
-A4,A,4,Ashbya-Vero Beach FL- milkweed bug - Oleander 7/21/07,27.64,-80.46,,113,,,,,,,,
-A5,A,5,Ashbya - Virginia Creeper Trail - milkweed bug - Milkweed 8/05/07,36.7,-81.97,,,,,,,,,,
-A6,A,6,"Ashbya - milkweed bug- milkweed Fries, VA 8/11/08",36.71,-80.98,,,,,,,,,,
+A3,A,3,Ashbya- West Palm Beach Beach FL- milkweed bug - Oleander 7/21/07,26.72,-80.05,,113,milkweed bug,,oleander,FL,West Palm Beach,7/21/07,,
+A4,A,4,Ashbya-Vero Beach FL- milkweed bug - Oleander 7/21/07,27.64,-80.46,,113,milkweed bug,,oleander,FL,Vero Beach,7/22/07,,
+A5,A,5,Ashbya - Virginia Creeper Trail - milkweed bug - Milkweed 8/05/07,36.7,-81.97,,,milkweed bug,,Milkweed,VA,,08/05/07,,
+A6,A,6,"Ashbya - milkweed bug- milkweed Fries, VA 8/11/08",36.71,-80.98,,,milkweed bug,,Milkweed,VA,,,,
 A7,A,7,"Ashbya - western box elder bug - maple tree - Skyline Blvd, across from CDF station near Saratoga gap CA 8/20/07",37.24,-122.12,,,western box elder bug,,maple tree,CA,saratoga gap,8/20/07,,
-A8,A,8,Milkweed bug,,,,,milkweed bug,adult,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),09/05/2019,"same bug as a8,b8,c8,d8 possible contamination",whi3 is identical to A1 for polyQ tract
-A9,A,9,Large Milkweed Bug,,,,,Large Milkweed Bug,adult,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),6/15/20,"Same Bug as 9A,9B,9C",
-B1,B,1,"Florida AL1 strain sequenced, isolated from milkweed bug (female) from West Palm Beach from Oleander plant 8/7/05",26.72,-80.05,,,,,,FL,,,,
+A8,A,8,Milkweed bug,36,-78.89,,,milkweed bug,adult,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),09/05/2019,"same bug as a8,b8,c8,d8 possible contamination",whi3 is identical to A1 for polyQ tract
+A9,A,9,Large Milkweed Bug,36,-78.89,,,Large Milkweed Bug,adult,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),6/15/20,"Same Bug as 9A,9B,9C",
+B1,B,1,"Florida AL1 strain sequenced, isolated from milkweed bug (female) from West Palm Beach from Oleander plant 8/7/05",26.72,-80.05,,,milkweed bug,,oleander,FL,,,,
 B2,B,2,Ashbya- Vero Beach FL- milkweed bug - Oleander 7/21/07,27.64,-80.46,,,milkweed bug,,oleander,FL,Vero Beach,7/21/07,,
-B3,B,3,Ashbya- West Palm Beach Beach FL- milkweed bug - Oleander 7/21/07,26.72,-80.05,,113.00,milkweed bug,,oleander,FL,West Palm Beach,7/21/07,,
-B4,B,4,Ashbya-Vero Beach FL- milkweed bug - Oleander 7/21/07,27.64,-80.46,,,,,,,,,,
-B5,B,5,Ashbya - red shouldered bugs - golden rain tree - Ralston Arboretum - Raleign 8/12/08,35.79,-78.70,,,,,,,,,,
-B6,B,6,"Ashbya - milkweed bug- milkweed Fries, VA 8/11/08",36.71,-80.98,,,,,,,,,,
+B3,B,3,Ashbya- West Palm Beach Beach FL- milkweed bug - Oleander 7/21/07,26.72,-80.05,,113,milkweed bug,,oleander,FL,West Palm Beach,7/21/07,,
+B4,B,4,Ashbya-Vero Beach FL- milkweed bug - Oleander 7/21/07,27.64,-80.46,,,milkweed bug,,oleander,,,,,
+B5,B,5,Ashbya - red shouldered bugs - golden rain tree - Ralston Arboretum - Raleign 8/12/08,35.79,-78.7,,,red shouldered bugs,,golden rain tree,,,,,
+B6,B,6,"Ashbya - milkweed bug- milkweed Fries, VA 8/11/08",36.71,-80.98,,,milkweed bug,,Milkweed,,,,,
 B7,B,7,"Ashbya typical - milkweed bug - Oleander - Beaufort, along railroad near Duke Marine Lab 8/25/07",34.73,-76.68,,,milkweed bug,,oleander,NC,beaufort,8/25/07,,
-B8,B,8,Milkweed bug,,,,,milkweed bug,adult,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),09/05/2019,"same bug as a8,b8,c8,d8",whi3 is identical to A1 for polyQ tract
-B9,B,9,Large Milkweed Bug,,,,,Large Milkweed Bug,adult,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),6/15/20,"Same Bug as 9A,9B,9C",
+B8,B,8,Milkweed bug,36,-78.89,,,milkweed bug,adult,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),09/05/2019,"same bug as a8,b8,c8,d8",whi3 is identical to A1 for polyQ tract
+B9,B,9,Large Milkweed Bug,36,-78.89,,,Large Milkweed Bug,adult,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),6/15/20,"Same Bug as 9A,9B,9C",
 C1,C,1,"FDAL2 virgin islands, milkweed bug from Oleander 8/21/06",18.06,-65.29,,,milkweed bug,,oleander,Virgin Islands,,8/21/06,,
 C2,C,2,Ashbya- Daytona Beach FL- milkweed bug - Oleander 7/21/07,29.21,-81.16,,113,milkweed bug,,oleander,FL,Daytona Beach,7/21/07,,
 C3,C,3,Ashbya- West Palm Beach Beach FL- milkweed bug - Oleander 7/21/07,26.72,-80.05,,,milkweed bug,,oleander,FL,West Palm Beach,7/21/07,,
-C4,C,4,Ashbya-Vero Beach FL- milkweed bug - Oleander 7/21/07,27.64,-80.46,,,,,,,,,,
-C5,C,5,Ashbya - Virginia Creeper Trail - milkweed bug - Milkweed 8/05/07,36.7,-81.97,,113,,,,,,,,
-C6,C,6,"Ashbya - milkweed bug- milkweed Fries, VA 8/11/08",36.71,-80.98,,,,,,,,,,
+C4,C,4,Ashbya-Vero Beach FL- milkweed bug - Oleander 7/21/07,27.64,-80.46,,,milkweed bug,,oleander,,,,,
+C5,C,5,Ashbya - Virginia Creeper Trail - milkweed bug - Milkweed 8/05/07,36.7,-81.97,,113,milkweed bug,,Milkweed,,,,,
+C6,C,6,"Ashbya - milkweed bug- milkweed Fries, VA 8/11/08",36.71,-80.98,,,milkweed bug,,Milkweed,,,,,
 C7,C,7,"Ashbya leathery - milkweed bug - Oleander - Beaufort, along railroad near Duke Marine Lab 8/25/07",34.73,-76.68,,,milkweed bug,,oleander,NC,beaufort,8/25/07,,
-C8,C,8,Milkweed bug,,,,,milkweed bug,adult,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),09/05/2019,"same bug as a8,b8,c8,d8",whi3 is identical to A1 for polyQ tract
-C9,C,9,Large Milkweed Bug,,,,,Large Milkweed Bug,adult,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),6/15/20,"Same Bug as 9A,9B,9C",
+C8,C,8,Milkweed bug,36,-78.89,,,milkweed bug,adult,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),09/05/2019,"same bug as a8,b8,c8,d8",whi3 is identical to A1 for polyQ tract
+C9,C,9,Large Milkweed Bug,36,-78.89,,,Large Milkweed Bug,adult,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),6/15/20,"Same Bug as 9A,9B,9C",
 D1,D,1,"FDAL3 virgin islands, milkweed bug from Oleander 8/21/06",18.06,-65.29,,,milkweed bug,,oleander,Virgin Islands,,8/21/06,,
 D2,D,2,Ashbya- Daytona Beach FL- milkweed bug - Oleander 7/21/07,29.21,-81.16,,,milkweed bug,,oleander,FL,Daytona Beach,7/21/07,,
 D3,D,3,Ashbya- West Palm Beach Beach FL- milkweed bug - Oleander 7/21/07,26.72,-80.05,,,milkweed bug,,oleander,FL,West Palm Beach,7/21/07,,
-D4,D,4,Ashbya-Vero Beach FL- milkweed bug - Oleander 7/21/07,27.64,-80.46,,,,,,,,,,
-D5,D,5,Ashbya - red shouldered bugs - golden rain tree - Ralston Arboretum - Raleign 8/12/08,35.79,-78.70,,128,,,,,,,,
-D6,D,6,"Ashbya - milkweed bug- milkweed Fries, VA 8/11/08 (less yelow)",36.71,-80.98,,125,,,,,,,,
+D4,D,4,Ashbya-Vero Beach FL- milkweed bug - Oleander 7/21/07,27.64,-80.46,,,milkweed bug,,oleander,,,,,
+D5,D,5,Ashbya - red shouldered bugs - golden rain tree - Ralston Arboretum - Raleign 8/12/08,35.79,-78.7,,128,red shouldered bugs,,golden rain tree,,,,,
+D6,D,6,"Ashbya - milkweed bug- milkweed Fries, VA 8/11/08 (less yelow)",36.71,-80.98,,125,milkweed bug,,Milkweed,,,,,
 D7,D,7,Ashbya - milkweed bug - Oleander - Wrightsvill Beach NC near custard shop,34.21,-77.83,,,milkweed bug,,oleander,NC,Wrightsville Beach,,,
-D8,D,8,Milkweed bug,,,,,milkweed bug,adult,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),09/05/2019,"same bug as a8,b8,c8,d8",whi3 is identical to A1 for polyQ tract
+D8,D,8,Milkweed bug,36,-78.89,,,milkweed bug,adult,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),09/05/2019,"same bug as a8,b8,c8,d8",whi3 is identical to A1 for polyQ tract
 D9 - 778,D,9,New Mexixo,35.68,-106.05,,,,,,,,,,
 E1,E,1,"BUG X1 - (Box elder bug) Ashbya aceri sequenced strain 6/13/07 - from box elder tree, 831 Sedgefield St. Durham",36,-78.93,,128,box elder bug,,box elder,NC,Durham (831 Sedgefield),,,
 E2,E,2,Ashbya-Vero Beach FL- milkweed bug - Oleander 7/21/07,27.64,-80.46,,113,milkweed bug,,oleander,FL,Vero Beach,7/21/07,,
 E3,E,3,Ashbya- West Palm Beach Beach FL- milkweed bug - Oleander 7/21/07,26.72,-80.05,,,milkweed bug,,oleander,FL,West Palm Beach,7/21/07,,
-E4,E,4,Ashbya-Vero Beach FL- milkweed bug - Oleander 7/21/07,27.64,-80.46,,,,,,,,,,
-E5,E,5,Ashbya - red shouldered bugs - golden rain tree - Ralston Arboretum - Raleign 8/12/08,35.79,-78.70,,,,,,,,,,
-E6,E,6,Ashbya - red  shouldered bug - Golden Rain Tree Duke South hospital entrance 8/20/07,36,-78.93,,124,,,,,,,,
-E7,E,7,Milkweed bug,,,,,milkweed bug,larvae,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),09/05/2019,"same bug as e7,f7,g7,h7; white colored (others from same bug were yellow)",whi3 is identical to A1 for polyQ tract
-E8,E,8,Milkweed bug,,,,,milkweed bug,adult,"Common Milkweed Asclepias syriaca,",NC,Saxaphaw NC,9/30/2019,"same bug as (E8,F8,G8,H8)",whi3 is identical to A1 for polyQ tract
+E4,E,4,Ashbya-Vero Beach FL- milkweed bug - Oleander 7/21/07,27.64,-80.46,,,milkweed bug,,oleander,,,,,
+E5,E,5,Ashbya - red shouldered bugs - golden rain tree - Ralston Arboretum - Raleign 8/12/08,35.79,-78.7,,,red shouldered bugs,,golden rain tree,,,,,
+E6,E,6,Ashbya - red  shouldered bug - Golden Rain Tree Duke South hospital entrance 8/20/07,36,-78.93,,124,red shouldered bugs,,golden rain tree,,,,,
+E7,E,7,Milkweed bug,36,-78.89,,,milkweed bug,larvae,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),09/05/2019,"same bug as e7,f7,g7,h7; white colored (others from same bug were yellow)",whi3 is identical to A1 for polyQ tract
+E8,E,8,Milkweed bug,35.95,-79.32,,,milkweed bug,adult,"Common Milkweed Asclepias syriaca,",NC,Saxaphaw NC,9/30/2019,"same bug as (E8,F8,G8,H8)",whi3 is identical to A1 for polyQ tract
 F1,F,1,box elder bug Durham 6/13/07,36,-78.93,,128,box elder bug,,,NC,Durham,6/13/07,,
 F2,F,2,Ashbya- West Palm Beach Beach FL- milkweed bug - Oleander 7/21/07,26.72,-80.05,,,milkweed bug,,oleander,FL,West Palm Beach,7/21/07,,
-F3,F,3,"Ashbya?- West Palm Beach Beach FL- milkweed bug - Oleander 7/21/07 light colored, leathery???",26.72,-80.05,,112.00,milkweed bug,,oleander,FL,West Palm Beach,7/21/07,,
-F4,F,4,Ashbya-Oak Island NC- milkweed bug - Oleander 7/28/07,33.92,-78.21,,,,,,,,,,
-F5,F,5,Ashbya - red shouldered bugs - golden rain tree - Ralston Arboretum - Raleign 8/12/08,35.79,-78.70,,128,,,,,,,,
-F6,F,6,Ashbya - box elder bug - Box elder tree - botanical garden Green Bay WI 8/20/07,44.52,-88.06,,120,,,,,,,,
-F7,F,7,Milkweed bug,,,,,milkweed bug,larvae,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),09/05/2019,"same bug as e7,f7,g7,h7",whi3 is identical to A1 for polyQ tract
-F8,F,8,Milkweed bug,,,,,milkweed bug,adult,"Common Milkweed Asclepias syriaca,",NC,Saxaphaw NC,9/30/2019,"same bug as (E8,F8,G8,H8)",whi3 is identical to A1 for polyQ tract
+F3,F,3,"Ashbya?- West Palm Beach Beach FL- milkweed bug - Oleander 7/21/07 light colored, leathery???",26.72,-80.05,,112,milkweed bug,,oleander,FL,West Palm Beach,7/21/07,,
+F4,F,4,Ashbya-Oak Island NC- milkweed bug - Oleander 7/28/07,33.92,-78.21,,,milkweed bug,,oleander,,,,,
+F5,F,5,Ashbya - red shouldered bugs - golden rain tree - Ralston Arboretum - Raleign 8/12/08,35.79,-78.7,,128,red shouldered bugs,,golden rain tree,,,,,
+F6,F,6,Ashbya - box elder bug - Box elder tree - botanical garden Green Bay WI 8/20/07,44.52,-88.06,,120,box elder bug,,,,,,,
+F7,F,7,Milkweed bug,36,-78.89,,,milkweed bug,larvae,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),09/05/2019,"same bug as e7,f7,g7,h7",whi3 is identical to A1 for polyQ tract
+F8,F,8,Milkweed bug,35.95,-79.32,,,milkweed bug,adult,"Common Milkweed Asclepias syriaca,",NC,Saxaphaw NC,9/30/2019,"same bug as (E8,F8,G8,H8)",whi3 is identical to A1 for polyQ tract
 G1,G,1,"box elder bug, Wisconsin 7/23/07",44.52,-88.06,,,box elder bug,,,WI,,7/23/07,,
-G2,G,2,Ashbya- West Palm Beach Beach FL- milkweed bug - Oleander 7/21/07,26.72,-80.05,,113.00,milkweed bug,,oleander,FL,West Palm Beach,7/21/07,,
-G3,G,3,"box elder bug, Wisconsin, 7/24/207",44.52,-88.06,,124,,,,,,,,
-G4,G,4,Ashbya-Oak Island NC- milkweed bug - Oleander 7/28/07,33.92,-78.21,,,,,,,,,,
-G5,G,5,"Ashbya - milkweed bug- milkweed Fries, VA 8/11/08",36.71,-80.98,,113,,,,,,,,
+G2,G,2,Ashbya- West Palm Beach Beach FL- milkweed bug - Oleander 7/21/07,26.72,-80.05,,113,milkweed bug,,oleander,FL,West Palm Beach,7/21/07,,
+G3,G,3,"box elder bug, Wisconsin, 7/24/207",44.52,-88.06,,124,box elder bug,,,,,,,
+G4,G,4,Ashbya-Oak Island NC- milkweed bug - Oleander 7/28/07,33.92,-78.21,,,milkweed bug,,oleander,,,,,
+G5,G,5,"Ashbya - milkweed bug- milkweed Fries, VA 8/11/08",36.71,-80.98,,113,milkweed bug,,Milkweed,,,,,
 G6,G,6,"Ashbya - western box elder bug - maple tree - Skyline Blvd, across from CDF station near Saratoga gap CA 8/20/07",37.24,-122.12,,,western box elder bug,,maple tree,CA,saratoga gap,8/20/07,,
-G7,G,7,Milkweed bug,,,,,milkweed bug,larvae,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),09/05/2019,"same bug as e7,f7,g7,h7",whi3 is identical to A1 for polyQ tract
-G8,G,8,Milkweed bug,,,,,milkweed bug,adult,"Common Milkweed Asclepias syriaca,",NC,Saxaphaw NC,9/30/2019,"same bug as (E8,F8,G8,H8)",whi3 is identical to A1 for polyQ tract
+G7,G,7,Milkweed bug,36,-78.89,,,milkweed bug,larvae,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),09/05/2019,"same bug as e7,f7,g7,h7",whi3 is identical to A1 for polyQ tract
+G8,G,8,Milkweed bug,35.95,-79.32,,,milkweed bug,adult,"Common Milkweed Asclepias syriaca,",NC,Saxaphaw NC,9/30/2019,"same bug as (E8,F8,G8,H8)",whi3 is identical to A1 for polyQ tract
 H1,H,1,Ashbya- Daytona Beach FL- milkweed bug - Oleander 7/21/07,29.21,-81.16,,,Milkweed bug,,oleander,FL,Daytona Beach,7/21/07,,
 H2,H,2,Ashbya- West Palm Beach Beach FL- milkweed bug - Oleander 7/21/07,26.72,-80.05,,,milkweed bug,,oleander,FL,West Palm Beach,7/21/07,,
-H3,H,3,Ashbya-Vero Beach FL- milkweed bug - Oleander 7/21/07,27.64,-80.46,,,,,,FL,,,,
-H4,H,4,Ashbya-Oak Island NC- milkweed bug - Oleander 7/28/07,33.92,-78.21,,,,,,,,,,
-H5,H,5,"Ashbya - milkweed bug- milkweed Fries, VA 8/11/08",36.71,-80.98,,,,,,,,,,
+H3,H,3,Ashbya-Vero Beach FL- milkweed bug - Oleander 7/21/07,27.64,-80.46,,,milkweed bug,,oleander,FL,,,,
+H4,H,4,Ashbya-Oak Island NC- milkweed bug - Oleander 7/28/07,33.92,-78.21,,,milkweed bug,,oleander,,,,,
+H5,H,5,"Ashbya - milkweed bug- milkweed Fries, VA 8/11/08",36.71,-80.98,,,milkweed bug,,Milkweed,,,,,
 H6,H,6,"Ashbya - western box elder bug - maple tree - Skyline Blvd, across from CDF station near Saratoga gap CA 8/20/07",37.24,-122.12,,120,western box elder bug,,maple tree,CA,saratoga gap,8/20/07,,
-H7,H,7,Milkweed bug,,,,,milkweed bug,larvae,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),09/05/2019,"same bug as e7,f7,g7,h7",whi3 is identical to A1 for polyQ tract
-H8,H,8,Milkweed bug,,,,,milkweed bug,adult,"Common Milkweed Asclepias syriaca,",NC,Saxaphaw NC,9/30/2019,"same bug as (E8,F8,G8,H8)",whi3 is identical to A1 for polyQ tract
+H7,H,7,Milkweed bug,36,-78.89,,,milkweed bug,larvae,"Common Milkweed Asclepias syriaca,",NC,Durham NC (603 Gurley),09/05/2019,"same bug as e7,f7,g7,h7",whi3 is identical to A1 for polyQ tract
+H8,H,8,Milkweed bug,35.95,-79.32,,,milkweed bug,adult,"Common Milkweed Asclepias syriaca,",NC,Saxaphaw NC,9/30/2019,"same bug as (E8,F8,G8,H8)",whi3 is identical to A1 for polyQ tract
