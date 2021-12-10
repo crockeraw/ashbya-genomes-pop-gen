@@ -4,6 +4,7 @@ library("tidyverse")
 library(ggplot2)
 library(reshape2)
 
+set.seed(1)
 my_pal <- RColorBrewer::brewer.pal(n=8, name = "Dark2")
 
 dir.create("images",showWarnings = FALSE)
@@ -164,19 +165,19 @@ axis(side = 1)
 title(xlab = "Genetic distance (proportion of loci that are different)")
 dev.off()
 
-sub3 <- popsub(gl, "2")
-
-ia <- samp.ia(sub3,n.snp = 1000L, reps = 100)
-hist(ia)
-
-not3 <- popsub(gl, c("1","2","4","5"))
-
-ia_not3 <- samp.ia(sub3,n.snp = 1000L, reps = 100)
-hist(ia_not3)
-
-sub1 <- popsub(gl, "1")
-ia1 <- samp.ia(sub3,n.snp = 1000, reps = 100)
-hist(ia1)
+# sub3 <- popsub(gl, "2")
+# 
+# ia <- samp.ia(sub3,n.snp = 1000L, reps = 100)
+# hist(ia)
+# 
+# not3 <- popsub(gl, c("1","2","4","5"))
+# 
+# ia_not3 <- samp.ia(sub3,n.snp = 1000L, reps = 100)
+# hist(ia_not3)
+# 
+# sub1 <- popsub(gl, "1")
+# ia1 <- samp.ia(sub3,n.snp = 1000, reps = 100)
+# hist(ia1)
 
 colnames(merged)[4] <- "Cluster"
 colnames(merged)[9] <- "Plant"

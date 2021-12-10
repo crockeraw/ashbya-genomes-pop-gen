@@ -7,10 +7,11 @@ function(input, output, session) {
   col <- data.frame(PCA,DAPC,Geographic)
   
   d <- as.data.frame(read.csv("../derived_data/shiny_data.csv"))
-  d[is.na(d)] <- FALSE
   
   selectedData <- reactive({
-    col[[input$pos]]
+    c = col[[input$pos]]
+    d[c][is.na(d[c])] <- FALSE
+    c
   })
   
   colors <- reactive({
@@ -26,7 +27,8 @@ function(input, output, session) {
       geom_jitter(size = 4, shape = 21, height=diff(range(x,na.rm=TRUE)*n), width = diff(range(y,na.rm=TRUE))*n) +
       guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster")) +
       theme_bw() + scale_color_manual(values=c(my_pal),na.value="grey") +
-      scale_fill_manual(values=c(paste(my_pal, "66", sep = "")))
+      scale_fill_manual(values=c(paste(my_pal, "66", sep = ""))) +
+      xlab(selectedData()[1]) + ylab(selectedData()[2])
   })
   
 }
