@@ -23,7 +23,8 @@ images/pca.png\
  images/DAPC_byPlant.png\
  images/DAPC_byBug.png\
  images/geographic_byDAPC.png\
- images/geographic_byPCA.png: dim_reduction.r source_data/filtered_vars_biallelic_seen2x.vcf
+ images/geographic_byPCA.png\
+ images/phylo_tree.png: dim_reduction.r source_data/filtered_vars_biallelic_seen2x.vcf
 	Rscript dim_reduction.r
 
 source_data/filtered_vars_biallelic_seen2x.vcf:

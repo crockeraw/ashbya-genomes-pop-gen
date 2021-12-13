@@ -154,12 +154,12 @@ dev.off()
 
 library(ape)
 library(poppr)
-tree <- aboot(gl, tree = "upgma", distance = bitwise.dist, sample = 100, showtree = F, cutoff = 50, quiet = T)
+tree <- aboot(gl, tree = "upgma", distance = bitwise.dist, sample = 10, showtree = F, cutoff = 50, quiet = T)
 gl@pop <- clust$grp
 png("images/phylo_tree.png", width=800, height=600)
 plot.phylo(tree, cex = 0.8, font = 2, adj = 0, tip.color = my_pal[gl$pop])
 #legend(35,10,c("CA","OR","WA"),cols, border = FALSE, bty = "n")
-legend('topleft', legend = gl$pop, fill = cols, border = FALSE, bty = "n", cex = 2)
+#legend('topleft', legend = gl$pop, fill = cols, border = FALSE, bty = "n", cex = 2)
 axis(side = 1)
 title(xlab = "Genetic distance (proportion of loci that are different)")
 dev.off()
@@ -182,5 +182,4 @@ colnames(merged)[4] <- "Cluster"
 colnames(merged)[9] <- "Plant"
 colnames(merged)[10] <- "Insect"
 
-write.csv(data_csv, "derived_data/variants_isolate_by_gene.csv")
 write.csv(merged, "derived_data/shiny_data.csv")
