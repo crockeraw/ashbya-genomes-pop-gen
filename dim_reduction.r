@@ -70,7 +70,6 @@ p2
 dev.off()
 
 clust <- find.clusters(gl, glPca=pca1, n.pca= 10, n.clust=5)
-plot(pca1$scores, col=factor(clust$grp))
 p3 <- ggplot(pc_points, aes(x = PC1, y = PC2, color = clust$grp, fill = clust$grp))
 p3 <- p3 + geom_point(size = 4, shape = 21)
 p3 <- p3 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(title = "Cluster"))
@@ -147,8 +146,8 @@ p8 <- p8 + guides(fill = guide_legend(title = "Cluster"), colour = guide_legend(
 p8 <- p8 + theme_bw()
 p8 <- p8 + scale_color_manual(values=c(my_pal),na.value="grey") 
 p8 <- p8 + scale_fill_manual(values=c(paste(my_pal, "66", sep = ""))) +
-geom_polygon( data=MainStates, aes(x=long, y=lat, group=group),
-              color="black", fill=NA)
+  geom_polygon( data=MainStates, aes(x=long, y=lat, group=group),
+                color="black", fill=NA)
 png("images/geographic_byPCA.png")
 p8
 dev.off()

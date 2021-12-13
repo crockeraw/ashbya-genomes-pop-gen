@@ -16,12 +16,14 @@ output:
 
 - [1. Project Overview](#Intro)
 - [2. Quality Analysis](#QA)
-  - [Before Filtering](#sub1)
-  - [After Filtering](#sub2)
-- [3. PCA and Clustering](#PCA)
-  - [sub3](#sub3)
-  - [sub4](#sub4)
-  - [metadata](#meta) 
+  - [Before Filtering](#pre)
+  - [After Filtering](#post)
+- [3. PCA and Clustering](#DIM)
+  - [PCA](#PCA)
+  - [K-means](#Kmeans)
+  - [DAPC](#DAPC) 
+  - [Metadata: Sample Source](#meta)
+  - [Metadata: Geography](#geo)
 - [4. Phylogentics](#phylo)
   - [trees](#trees)
   - [linkage diseqalibrium](#LD)
@@ -62,23 +64,35 @@ Next we cna plot the first two PCs to get an idea of how our samples are separat
 <img src="images/pca.png" width="430"/>
 
 ### Kmeans Clustering <a name="Kmeans"></a>
-To better understand the structure of the data we can use Kmeans to group similar samples into an arbitrary number (K) of groups. First, we might want to get a measure of 
+To better understand the structure of the data we can use the Kmeans algorithm to group similar samples into an arbitrary number (K) of groups. First, we might want to get a measure of how well different numbers of clusters fit the data. Here I use the Bayesian information criterion (BIC) as a metric for that. BIC is difficult for me to understand, but it increases as a function of the variance of the error and of K, meaning in general **lower scores are better**.\
 
 <img src="images/kmeans_test.png" width="500"/>
 
+So let's just take a look at how the data is grouped - using the PC embedding of the data - when we use K=10...\
+
 <img src="images/pca_10means.png" width="500"/>
+
+This is all pretty subjective, but it seems kind of useless to have that many clusters to me. Something like 3 or 5 might suit us better given how the data looks. Let's try 5.\
 
 <img src="images/pca_5means.png" width="500"/>
 
-### Discriminant analysis of principal components
+### Discriminant analysis of principal components <a name="DAPC"></a>
+
+<a href="https://bmcgenomdata.biomedcentral.com/articles/10.1186/1471-2156-11-94">Jombart et al. 2010</a> introduced a method called Discriminant Analysis of Principal Components (DAPC), which relies on sequential Kmeans clustering to choose underlying models and predict genetic clustering.\
 
 <img src="images/DAPC_5means.png" width="500"/>
 
-### Metadata in DAPC space
+### Metadata in DAPC space <a name="meta"></a>
 
+It would be great if we knew something about the samples, aside from the sequencing information. Fortunately, we do. Unfortunately, it is a bit sparse; some of these samples do not include information about the sample source, but many do. \
+\
+Ashbya is associated with bugs that grow on plants (most commonly milkweed). By plotting in DAPC space and coloring by group association, we might hope to see that our clusters actually correspond well to some variable in the meta-data.\
+
+<p float="left">
 <img src="images/DAPC_byPlant.png" width="500"/>
-
 <img src="images/DAPC_byBug.png" width="500"/>
+</p>
+
 
 ### Clusters in Geographical space <a name="geo"></a>
 
@@ -98,6 +112,4 @@ Trees and linkage and stuff.
 Based on distance metric, colored with Kmeans groupings.\
 
 <img src="images/phylo_tree.png" width="800"/>
-
-
 
