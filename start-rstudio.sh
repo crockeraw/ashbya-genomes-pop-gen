@@ -4,6 +4,7 @@ docker build . -t core-genome
 
 docker run --rm \
  -p 8888:8787 \
+ -p 3333:3333\
  -e PASSWORD=${1:-foo}\
  -v $(pwd):/home/rstudio/\
  -d\

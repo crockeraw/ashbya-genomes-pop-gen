@@ -1,7 +1,7 @@
 # k-means only works with numerical variables,
 # so don't give the user the option to select
 # a categorical variable
-df <- read.csv("../derived_data/shiny_data.csv")
+df <- read.csv("shiny_data.csv")
 
 color <- c("Cluster", "Plant", "Insect")
 position <-c("PCA", "DAPC", "Geographic")

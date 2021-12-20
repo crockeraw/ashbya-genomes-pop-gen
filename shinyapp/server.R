@@ -6,7 +6,7 @@ function(input, output, session) {
   Geographic <- c("LON", "LAT")
   col <- data.frame(PCA,DAPC,Geographic)
   
-  d <- as.data.frame(read.csv("../derived_data/shiny_data.csv"))
+  d <- as.data.frame(read.csv("shiny_data.csv"))
   
   selectedData <- reactive({
     c = col[[input$pos]]

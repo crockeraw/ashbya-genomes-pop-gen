@@ -8,7 +8,6 @@ set.seed(1)
 my_pal <- RColorBrewer::brewer.pal(n=8, name = "Dark2")
 
 dir.create("images",showWarnings = FALSE)
-dir.create("derived_data",showWarnings = FALSE)
 
 # Load and clean file
 vcf <- read.vcfR("source_data/filtered_vars_biallelic_seen2x.vcf")

@@ -30,25 +30,17 @@ output:
 - [5. Links](#links)
 
 ## Project Overview <a name="Intro"></a>
-48 Ashbya genomes, 46 after filtering possible duplicate samples.\
+48 Ashbya genomes initially, F3 and F6 seemed to be sequeunced twice, so one set was dropped.\
+46 Ashbya genomes are included in this report.
 
 ## Quality Analysis <a name="QA"></a>
-*Ashbya* genomes were sequenced with paired-end, short-read technology, and aligned to the *Ashbya* reference genome.
-Following alignment, variants (SNPs and indels) were called using bcftools.\
-Only biallelic loci with high quality were used.
+*Ashbya* genomes were sequenced with Illumina\'s paired-end, short-read technology, and aligned to the *Ashbya gossypii* reference genome (Eremothecium gossypii ATCC 10895).
+Following alignment with BWA-MEM, variants (SNPs and indels) were called using bcftools.\
+Only biallelic loci with high quality scores were retained for this analysis.
 
-### Pre-Filtering <a name="pre"></a>
-Pre-filtering data includes information like the sequencing depth and quality scores of each nucleotide. Major changes in sequencing depth (and quality) could indicate regions that are lost or duplicated in certain isolates.
 <p float="left">
   <img src="images/pre-filteringQC.png" width="500"/>
   <img src="images/pre-filteringQC_hist.png" width="500"/> 
-</p>
-
-### Post-Filtering <a name="post"></a>
-After filtering, some large regions are lost. These likely include important information, but are not amenable to the types of analyses I am doing in this report. Subsequent analyses might include the construction of a pan-genome for these isolates, and comparison of presence/absence of large regions. 
-<p float="left">
-  <img src="images/post-filteringQC.png" width="500"/>
-  <img src="images/post-filteringQC_hist.png" width="500"/> 
 </p>
 
 ## Dimensionality Reduction and Clustering <a name="DIM"></a>
