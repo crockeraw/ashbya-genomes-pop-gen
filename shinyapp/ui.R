@@ -10,10 +10,18 @@ pageWithSidebar(
   headerPanel('Ashbya genomes exploration'),
   sidebarPanel(
     selectInput('color', 'Color by:', color),
-    selectInput('pos', 'Position by:', position, selected = position[[2]]),
-    numericInput('jitter', 'Scatter data for visibility (%)', 5, min = 0, max = 50)
+    h6("Cluster: k-means with k=5"),
+    h6("Plant: plant that insect host was found on"),
+    h6("Insect: host from which fungus was isolated"),
+    selectInput('pos', 'Position by:', position, selected = position[[1]]),
+    h6("PCA: principle component analysis"),
+    h6("DPCA: discriminant analysis of principal components"),
+    h6("Geographic: latitiude and longitude of sample collection"),
+    numericInput('jitter', 'Scatter data for visibility (%)', 5, min = 0, max = 50),
+    h6("Since many points are overlapping, jitter adds random noise to help visualization")
   ),
   mainPanel(
-    plotOutput('plot1')
-  )
+    plotOutput('plot1'),
+    img(src='phylo_tree.png',height="400")
+    )
 )

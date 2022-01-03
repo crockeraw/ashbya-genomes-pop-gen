@@ -157,12 +157,14 @@ tree <- aboot(gl, tree = "upgma", distance = bitwise.dist, sample = 10, showtree
 gl@pop <- clust$grp
 png("images/phylo_tree.png", width=800, height=600)
 plot.phylo(tree, cex = 0.8, font = 2, adj = 0, tip.color = my_pal[gl$pop])
-#legend(35,10,c("CA","OR","WA"),cols, border = FALSE, bty = "n")
-#legend('topleft', legend = gl$pop, fill = cols, border = FALSE, bty = "n", cex = 2)
 axis(side = 1)
 title(xlab = "Genetic distance (proportion of loci that are different)")
 dev.off()
 
+dir.create("shinyapp/www",showWarnings = FALSE)
+file.copy("images/phylo_tree.png","shinyapp/www/phylo_tree.png")
+
+# Commented code for looking at index of association within clusters.
 # sub3 <- popsub(gl, "2")
 # 
 # ia <- samp.ia(sub3,n.snp = 1000L, reps = 100)
