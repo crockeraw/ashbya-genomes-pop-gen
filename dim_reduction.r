@@ -183,4 +183,4 @@ colnames(merged)[4] <- "Cluster"
 colnames(merged)[9] <- "Plant"
 colnames(merged)[10] <- "Insect"
 
-write.csv(merged, "derived_data/shiny_data.csv")
+write.csv(merged, "shinyapp/shiny_data.csv")
