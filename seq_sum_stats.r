@@ -2,7 +2,7 @@ library("vcfR")
 
 dir.create("images",showWarnings = FALSE)
 
-vcf <- read.vcfR("source_data/filtered_vars_biallelic_seen2x_thin100.vcf")
+vcf <- read.vcfR("source_data/filtered_vars_biallelic_seen2x.vcf")
 dna_file <- 'source_data/GCF_000091025.4_ASM9102v4_genomic.fna'
 gff_file <- 'source_data/GCF_000091025.4_ASM9102v4_genomic.gff'
 dna <- ape::read.dna(dna_file, format = "fasta")
