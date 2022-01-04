@@ -12,7 +12,7 @@ First you need to clone this repository.
 Use the terminal to navigate to where you would like to make a copy of this repository and type or paste `git clone https://github.com/crockeraw/ashbya-genomes-pop-gen.git`. To actually run the scripts to reproduce the analysis you will need to have Docker installed on your computer, or manually install of the dependencies (not yet listed). 
 
 ### Create and run my Docker container
-The easiest and quickest way to build and interact with this project is by running the provided bash script (in a linux/mac terminal) by navigating to the project directory and typing `sudo bash start-rstudio.sh <custom-password>` and navigating to `localhost:8787` in a web browser. Your username will be Rstudio and password will be the custom password you provided, or "foo" if none was given. \
+The easiest and quickest way to build and interact with this project is by running the provided bash script (in a linux/mac terminal) by navigating to the project directory and typing `sudo bash start-rstudio.sh <custom-password>` and navigating to `localhost:8787` in a web browser. Your username will be rstudio and password will be the custom password you provided, or "foo" if none was given. \
 \
 If you do not want to create an Rstudio session you can simply run:
 ```
